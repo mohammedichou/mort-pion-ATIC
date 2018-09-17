@@ -29,6 +29,9 @@
 			var joueur = 1;
 			 $('button').click(function(){
        			 var x = $(this).attr('id');
+       			 if(document.getElementById(x).innerHTML != ""){
+       			 	return;
+       			 }
        			 if((joueur%2)==1){
        			 	document.getElementById(x).innerHTML = "X";
        			 }
