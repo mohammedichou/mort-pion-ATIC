@@ -34,8 +34,25 @@ input{
 
 }
 
+.chrono{
+	width:500px;
+	height:100px;
+	background-color: #2a2a2a;
+	margin : 50px auto;
+	padding : 10px;
+	overflow:auto;
+}
 
+.chrono h2{
+	color:#FFFFFF;
+	text-align: center;
+	font-size: 30px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
 
+.chrono button{
+	float:left;
+	margin-left: 95px;
 
-
-
+}

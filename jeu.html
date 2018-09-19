@@ -24,10 +24,11 @@
 			<button id="b8"></button>
 			<button id="b9"></button>
 		</div>
-		<input type="submit" value="recommencer" onClick="JavaScript:handleClick()">
-		<div id="state"> Coucou</div>
+		<input type="submit" value="recommencer" onClick="JavaScript:handleClick()" >
+		<div id="state"> joueur X a toi de jouer</div>
 		<script type="text/javascript">
 			var joueur = 1;
+
 
 			function handleClick(event){
 				for (var i = 1 ; i<10 ; i++){
@@ -35,13 +36,11 @@
 				}
 				document.getElementById("state").innerHTML="c'est repartie";
 			}
-
 			 $('button').click(function(){
        			 var x = $(this).attr('id');
        			 if(document.getElementById(x).innerHTML != ""){
        			 	return;
        			 }
-
        			 if((joueur%2)==1){
        			 	document.getElementById(x).innerHTML = "X";
        			 	document.getElementById("state").innerHTML="au tour de O a jouer"
@@ -110,12 +109,19 @@
 			 	   document.getElementById("b3").innerHTML == document.getElementById("b7").innerHTML ){
 						document.getElementById("state").innerHTML="victoire de "+document.getElementById("b3").innerHTML;
 					}
-
 			 }
-
 				
 			
 		</script>		
+	</div>
+	<div class="chrono">
+		<h2><time>00:00:00</time></h2>
+		<div class="center">
+        <div><button id="start">start</button></div>
+        <div><button id="stop">stop</button></div>
+        <div><button id="clear">clear</button></div>
+        </div>
+        <script src="StopWatchGo.js"type="text/javascript"></script>
 	</div>
 </body>
 </html>
