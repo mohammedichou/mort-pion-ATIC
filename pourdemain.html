@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to make a BUTTON element.</p>
+<ul  id="myl">
+<li>nouvelle tache</li>
+</ul>
+
+<button onclick="myFunction()">Try it</button>
+<input type="text" id="input1"/>
+
+<script>
+function myFunction() {
+	var value = document.getElementById("input1").value;
+	console.log(value);
+    var li = document.createElement("LI");
+    li.innerHTML = value ;
+    myel = document.getElementById("myl");
+    myel.appendChild(li);
+}
+</script>
+
+</body>
+</html>
+
+
