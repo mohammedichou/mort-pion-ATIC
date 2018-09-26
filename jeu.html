@@ -8,26 +8,50 @@
 </head>
 <body>
 	<h1>Le mort-pion !!!</h1>
+	<div class="score">
+	</div>
 	<div id="jeu">
 		<div>
-			<button id="b1"></button>
-			<button id="b2"></button>
-			<button id="b3"></button>
+			<button class="case" id="b1"></button>
+			<button class="case" id="b2"></button>
+			<button class="case" id="b3"></button>
 		</div>
 		<div>
-			<button id="b4"></button>
-			<button id="b5"></button>
-			<button id="b6"></button>
+			<button class="case" id="b4"></button>
+			<button class="case" id="b5"></button>
+			<button class="case" id="b6"></button>
 		</div>
 		<div>
-			<button id="b7"></button>
-			<button id="b8"></button>
-			<button id="b9"></button>
+			<button class="case" id="b7"></button>
+			<button class="case" id="b8"></button>
+			<button class="case" id="b9"></button>
 		</div>
 		<input type="submit" value="recommencer" onClick="JavaScript:handleClick()" >
 		<div id="state"> joueur X a toi de jouer</div>
 		<script type="text/javascript">
 			var joueur = 1;
+
+			function myFunction(event){
+       			 console.log(event.target);
+       			 x = event.target;
+       			 if(x.innerHTML != ""){
+       			 	return;
+       			 }
+       			 if((joueur%2)==1){
+       			 	x.innerHTML = "X";
+       			 	document.getElementById("state").innerHTML="au tour de O a jouer"
+       			 }
+       			 else{
+       			 	x.innerHTML = "O";
+       			 	document.getElementById("state").innerHTML="au tour de X a jouer"
+       			 }
+       			 joueur++;
+       			 test();
+       			}
+       			var a = document.getElementsByClassName('case');
+				for (var i = a.length - 1; i >= 0; i--) {
+					document.getElementsByClassName('case')[i].addEventListener("click", myFunction);
+				}
 
 
 			function handleClick(event){
@@ -36,22 +60,8 @@
 				}
 				document.getElementById("state").innerHTML="c'est repartie";
 			}
-			 $('button').click(function(){
-       			 var x = $(this).attr('id');
-       			 if(document.getElementById(x).innerHTML != ""){
-       			 	return;
-       			 }
-       			 if((joueur%2)==1){
-       			 	document.getElementById(x).innerHTML = "X";
-       			 	document.getElementById("state").innerHTML="au tour de O a jouer"
-       			 }
-       			 else{
-       			 	document.getElementById(x).innerHTML = "O";
-       			 	document.getElementById("state").innerHTML="au tour de X a jouer"
-       			 }
-       			 joueur++;
-       			 test();
-    		});
+
+    		
 			 function test(){
 			 	if(document.getElementById("b1").innerHTML!= "" && 
 			 	   document.getElementById("b2").innerHTML!= "" && 
@@ -110,8 +120,10 @@
 						document.getElementById("state").innerHTML="victoire de "+document.getElementById("b3").innerHTML;
 					}
 			 }
-				
-			
+
+			 
+
+
 		</script>		
 	</div>
 	<div class="chrono">
